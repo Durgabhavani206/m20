@@ -1,0 +1,9 @@
+html, body{  /*if we want to define a style for tag no need to use # */
+  margin: 0; /*by default page will leave some space on 4 sides so we write margin:0 */
+  height: 100%; /*by default it will give width but not height so we write height 100%*/
+  font-family: 'Courier New', Courier, monospace;
+  background: #f4f4f4;
+}
+#root{  /*if we want to define a style for id we need to use # */
+height: 100%;
+}

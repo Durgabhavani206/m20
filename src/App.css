@@ -1,0 +1,72 @@
+header{
+  height: 50px;
+  background: linear-gradient(90deg, purple 0%, blue 100%);
+  color: white;
+  line-height: 50px; /*to get the header name exactly at center of height of the blue color*/
+}
+footer{
+    height: 30px;
+    line-height: 30px;
+    font-size: 8pt;
+    color: white;
+    background: linear-gradient(90deg, red 0%, blue 100%);
+    text-align: center;
+}
+section{
+  height: calc(100% - 80px); /*this calc will take 100% height */
+  overflow: auto;
+}
+nav{
+  display: flex;
+  justify-content: space-between;
+}
+nav .logo{  /*here nav is parent so we write like  this*/
+  font-size: 20pt;
+  font-weight: bold;
+  margin-left: 15px;
+
+}
+nav ul{ /*inside nav there is a tag called ul*/
+  list-style: none;
+  display: flex; /*if we want to keep all in one line. we use this for sequence*/
+  margin: 0;  /*by default ul tag have extra margin and extra padding so we use this to correct that*/
+  padding: 0; 
+}
+nav ul li{
+  margin: 0 15px; /* meaninf for 0 ANd 15px is first value is applicable for top and bottom and second value is applicable for left and right*/
+}
+nav .menu{
+  margin-right: 15px;
+  font-size: 20pt; /*because it is inbuilt font we use font size to increase size of the symbol*/
+  display: none;
+}
+h1{
+  color: blue;
+}
+p{
+  color: lightcoral;
+}
+/*Responsiveness of the page is created by using this. to make responsiveness we should implement all in @media*/
+@media(max-width: 768px){
+  nav .menu{
+    display: block;
+  }
+  nav ul{
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    background: white;
+    width: 100%;
+  }
+  nav ul.active{
+    display: block;  /*we write this because when we click on menu icon list will appear but again when we click it will not go so to remove list when we click on menu icon again we use this*/
+  }                  /*after writing this navlist.classList.toggle("active"); in app.jsx we write the abive line*/
+  nav ul li{
+    background: linear-gradient(90deg, blue 0%, purple 100%);
+    margin: 2px 0 0 0; /*we cannot use margin and margin-top in same styling clas so we use margin and give top 2px,left 0 ,bottom0,right0*/
+    padding: 0;
+  }
+}
